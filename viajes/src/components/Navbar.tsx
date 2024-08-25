@@ -11,17 +11,17 @@ import { NAV_ITEMS } from "../constants/constants";
 
 const Navbar1 = () => {
   return (
-    <Navbar shouldHideOnScroll className="py-5">
-      <div className="flex justify-between md:justify-center items-center w-full px-14 ">
+    <Navbar shouldHideOnScroll>
+      <div className="flex justify-between md:justify-center items-center w-full px-14 bg-orange-500 h-20">
         <NavbarBrand>
           <Link href="/">
             <div className="flex items-center">
               <Image
                 src="/images/avion.png"
                 alt="Logo"
-                className="h-8 w-auto"
+                className="h-10 w-auto"
               />
-              <p className="ml-2 font-bold text-sm tracking-widest hidden sm:block">
+              <p className="ml-2 font-bold text-md tracking-widest hidden sm:block">
                 VIAJES MADRIZ
               </p>
             </div>
@@ -30,7 +30,7 @@ const Navbar1 = () => {
         <NavbarContent className="flex sm:gap-12 gap-4 sm:ml-40">
           {NAV_ITEMS.map((item, index) => (
             <NavbarItem key={index} className="font-bold">
-              <UILink href={item.href}>{item.label}</UILink>
+              <UILink href={item.href}><p className="hover:text-gray-200 md:text-lg">{item.label}</p></UILink>
             </NavbarItem>
           ))}
         </NavbarContent>
